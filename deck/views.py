@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from django.views import View
 
 # Create your views here.
-def index_view(request):
-
+class IndexView(View):
     template_name = "index.html"
-    greet = "hi"
-    context = {"greetings": greet}
-    return render(request, template_name,context)
+
+    def get(self, request):
+        greet = "hi"
+        context = {"greetings": greet}
+        return render(request, self.template_name, context)

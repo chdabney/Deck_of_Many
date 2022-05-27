@@ -8,7 +8,11 @@
 </head>
 <body>
     <div>
-      {{ greetings }}
+        {% for data in data %}
+            <p>{{ data.name }}</p>
+            <p>{{ data.description }}</p>
+            <img src="{{data.card_image}}" alt="">
+        {% endfor %}
     </div>
 </body>
 </html>
